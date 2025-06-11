@@ -7,6 +7,7 @@ const wss = new WebSocket.Server({ server: http });
 let clients = [];
 
 wss.on("connection", (ws) => {
+     ws._socket.setNoDelay(true);
   console.log("👋 Client connected");
   clients.push(ws);
 
